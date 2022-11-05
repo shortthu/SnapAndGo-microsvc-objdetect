@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  yolo_server: 
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: yolo_detection_server
+    volumes:
+      - ./:/yoloV5-snap-go
+    ports:
+      - '80:8000'
