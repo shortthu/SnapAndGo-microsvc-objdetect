@@ -15,7 +15,7 @@ class YoloV5_Detect:
         for (x0,y0,x1,y1,score,label) in regions:
             object = {}
             object['object'] = self.objects[int(label)] 
-            object['score'] = int(score)
+            object['score'] = round(float(score) * 100, 2)
             object['coordinate'] = {'x0':int(x0), 'y0':int(y0), 'x1':int(x1), 'y1':int(y1)}
             result.append(object)
 
