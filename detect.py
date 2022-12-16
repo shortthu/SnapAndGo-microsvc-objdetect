@@ -29,11 +29,12 @@ class YoloV5_Detect:
         regions = detect.xyxy[0]
         result = []
         for (x0,y0,x1,y1,score,label) in regions:
-            object = {}
-            object['object'] = self.objects[int(label)] 
-            object['score'] = round(float(score) * 100, 2)
-            object['coordinate'] = {'x0':int(x0), 'y0':int(y0), 'x1':int(x1), 'y1':int(y1)}
-            result.append(object)
+            if label >= 1:
+                object = {}
+                object['object'] = self.objects[int(label)] 
+                object['score'] = round(float(score) * 100, 2)
+                object['coordinate'] = {'x0':int(x0), 'y0':int(y0), 'x1':int(x1), 'y1':int(y1)}
+                result.append(object)
 
         return result
         # test sau
