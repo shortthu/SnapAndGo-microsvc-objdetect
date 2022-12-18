@@ -6,22 +6,22 @@ import random
 class YoloV5_Detect:
     def __init__(self):
         self.model_detect = torch.hub.load('ultralytics/yolov5', 'yolov5s')
-        self.objects = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 
-        'bus', 'train', 'truck', 'boat', 'traffic light', 
-        'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 
-        'cat', 'dog', 'horse', 'sheep', 'cow', 
-        'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 
-        'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee', 
-        'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 
-        'baseball glove', 'skateboard', 'surfboard', 'tennis racket', 'bottle', 
-        'wine glass', 'cup', 'fork', 'knife', 'spoon', 
-        'bowl', 'banana', 'apple', 'sandwich', 'orange', 
-        'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 
-        'cake', 'chair', 'couch', 'potted plant', 'bed', 
-        'dining table', 'toilet', 'tv', 'laptop', 'mouse', 
-        'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 
-        'toaster', 'sink', 'refrigerator', 'book', 'clock', 
-        'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush']
+        self.objects = ['Người', 'Xe đạp', 'Ô tô', 'Xe máy', 'Máy bay',
+        'Xe buýt', 'Tàu hỏa', 'Xe tải', 'Thuyền', 'Đèn giao thông',
+        'Vòi cứu hỏa', 'Biển báo dừng', 'Đồng hồ đỗ xe', 'Ghế dài', 'Chim',
+        'Mèo', 'Chó', 'Ngựa', 'Cừu', 'Bò',
+        'Voi', 'Gấu', 'Ngựa vằn', 'Hươu cao cổ', 'Ba lô',
+        'Ô', 'Túi xách', 'Cà vạt', 'Va li', 'Đĩa ném',
+        'Ván trượt tuyết đôi', 'Ván trượt tuyết', 'Bóng thể thao', 'Diều', 'Gậy bóng chày',
+        'Găng tay bóng chày', 'Ván trượt', 'Ván lướt sóng', 'Vợt tennis', 'Chai nước',
+        'Ly rượu', 'Cốc', 'Nĩa', 'Dao', 'Muỗng',
+        'Bát', 'Chuối', 'Táo', 'Sandwich', 'Quả cam',
+        'Bông cải xanh', 'Cà rốt', 'Xúc xích', 'Pizza', 'Donut',
+        'Bánh kem', 'Ghế', 'Đi văng', 'Chậu cây', 'Giường',
+        'Bàn ăn', 'Nhà vệ sinh', 'TV', 'Laptop', 'Chuột máy tính',
+        'Điều khiển từ xa', 'Bàn phím', 'Điện thoại di động', 'Lò vi sóng', 'Lò nướng',
+        'Máy nướng bánh mì', 'Bồn rửa', 'Tủ lạnh', 'Sách', 'Đồng hồ',
+        'Bình hoa', 'Kéo', 'Gấu bông', 'Máy sấy tóc', 'Bàn chải đánh răng']
 
     def predict(self,img):
         # img = cv2.imread(image_src)
